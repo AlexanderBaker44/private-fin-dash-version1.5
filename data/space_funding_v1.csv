@@ -1,0 +1,169 @@
+Company,Type of transaction,Sector,Lead,Other investors,Month,Series,Amount USD,Amount Original Currency,Country,Note
+Firefly Aerospace,M&A,Launch,,,,,,,,
+Orbex,"Government, Investment, Strategic",Launch,National Investment Bank of Scotland,"Green Future Fund of Denmark, HTGF, Jacobs (strategic), Octopus, Verve",,Series C,40M (check again),,UK,
+Latitude,"Government, Investment",Launch,,"BPI, Credit Mutuel Innovation, Expansion",,Series A,10M+,10M eur,France,
+Spinlaunch,Investment,Launch,ATW Partners,"Google Ventures, Kleiner Perkins, Lauder Ventures",,Series B,71M,71M USD,US,mix of equity and debt
+InnoSpace,Investment,Launch,Korea Investemt Partners,,,Series B,15.7M,,South Korea,
+Skyroot,Investment,Launch,GIC of Singapore,,,,51M,,India,
+Temis,M&A,Components,,,,,,,Italy,Avionics equipment manufacturer acquisition + 5% acquisition in Temis’s mother company
+HyPr Space,Investment,Launch,,,,,,1.1M Eur,France,
+Pythom Space,Investment,Launch,SpaceCowboys AB,,,,0.7M,,Sweden,
+MaiaSpace,Corporate Investment,,ArianneGroup,,,Seed,,,France,
+D-Orbit,CLA,OTV,,"C16, Primo Ventures, United Ventures",,CLA,51M,,Italy,a bit messy as a result of the called off spac
+D-Orbit,Cancelled SPAC,OTV,,,,,,,,
+Impulse Space,Investment,OTV,Founders Fund,,,Seed I,20M,20M USD,US,
+Impulse Space,Investment,OTV,Lux Capital,,,Seed II,10M,10M USD,US,
+Atmos Space,Investment,OTV,Cantos,OSV,,,5M,5M USD,US,nuclear propulsion is a massive deal
+Porkshop,Failure,OTV,,,,,,,,failed following unability to raise 3M seed round
+Plasmos,In-kind investment,OTV,Velo3D,,,,,,,250k USD in-kind investment
+Benchmark Space Systems,CLA,Propulsion,,,,CLA,4M,4M USD,US,a set of Vermont-based investors added up to 4M CLA
+Alameda Applied Sciences Corporation,M&A,Propulsion,,,,,,,US,
+Morpheus Space,Investment,Propulsion,Alpine Space Ventures,"Airbus Ventures, In-Q-Tel, Lavrock Ventures",,Series A,28M,,Germany,
+Ion-X,Investment,Propulsion,TF Participations,,,Seed,3.8M,,France,
+Terran Orbital,Strategic,Satellite Manufacturing,Lockheed Martin,,,post-IPO equity,100M,100M USD,US,LM now over 1/3 ownership
+Terran Orbital,"Investment, Strategic",Satellite Manufacturing,,,,,,,US,other investments in 2022
+GomSpace,Government,Satellite Manufacturing,EIB of Europe,,,,,,Denmark,
+York Space Systems,M&A,Satellite Manufacturing,,,,,,,US,
+AerospaceLabs,"Government, Investment, Strategic",Satellite Manufacturing,,,,,40M,40M Eur,Belgium,
+Loft,,"Other Business Models, Satellite Manufacturing",BlackRock,,,,,,US,
+Apax,Investment,Satellite Manufacturing,A16Z,"Lux, Village Global",,Seed,7.75M,7.75M USD,US,
+Reflex Aerospace,Investment,Satellite Manufacturing,Alpine Space Ventures,HTGF,,Seed,7M,,Germany,there should have been one more round Q1 ‘23
+U-Space,"Government, Investment",Satellite Manufacturing,Karot Capital,"BNP Paribas, Definvestment",,,7M+,7M Eur,France,
+Celestia Aerospace,Sketchy investment,Satellite Manufacturing,,,,,,,,supposedly raised 100M but I don’t believe a word of it
+Solestial,"Investment, Strategic",Components,Airbus Ventures,"AE HorizonX, Industrious Ventures",,Seed,10M,10M USD,US,
+QinetiQ,M&A,,,,,,,,,
+Slingshot Aerospace,M&A,,,,,,,,,Seradata
+Slingshot Aerospace,M&A,,,,,,,,,Numerica’s optical division
+SlingShot Aerospace,Investment,SSA,"ATX, Draper VC",,,Series A I,25M,25M USD,US,oversubscribed
+Slingshot Aerospace,Investment,SSA,Svay Ventures,,,Series A II,40.8M,40.8M USD,US,
+Scout Space,Investment,SSA,Virginia Innovation Partnership Corp,Decision Point,,,,,US,
+Neura Space,Investment,SSA,,,,,2.5M+,2.5M Eur,Portugal,
+Neura Space,"Government, Investment",SSA,Resiliance and Recovery Funds of Europe,,,,,25M Eur,Portugal,
+Okapi Orbits,"Investment, Strategic",SSA,MunichRe,"Apex Ventures, Dolby Family Ventures, Herius Capital",,,5.5M,,Germany,
+Vyoma,Investment,SSA,Atlantic Labs,Happiness Capital,,Seed extension,,,Germany,
+StellSpace,Investment,Software,Wischoff Ventures,Third Prime VC,,Pre-Seed,3.1M,3.1M USD,US,
+Epsilon 3,Investment,Software,,,,Seed,2.7M,2.7M USD,US,
+Epsilon 3,Investment,Software,Lux Capital,"MaC venture Capital, Moore Ventures, YCommbinator",,Series A,15M,15M USD,US,
+Charter Space,Investment,Software,,"7 percent Ventures, Techstars",,,1.2M,not sure,UK,
+Hostmi,M&A,Software,,,,,,,Germany,Precisious Payload does a relatively small acquisition
+LeanSpace,Investment,Software,Karista (Cosmi Capital),"42Cap, Herius Capital",,,6.4M,,France,Non-equity assistance from BPI
+Cysec,"Investment, Strategic","Cybersecurity, Software",,"Karista (CosmiCapital), Line Break Capital",,Seed extension,4.5M + 2M Euros,,Switzerland,"bit complicated, basically two distinct rounds, seed (2021), seed extension, seed extension II"
+Antaris,Investment,,,,,,,,US,
+Aerojet Rocketdyne,M&A,,,,,,,,US,by L3 Harris
+Tactical Data Links,M&A,,,,,,,,US,from ViaSat
+Orolioa,M&A,,,,,,,,,by Safran
+Syrlinks,M&A,,,,,,,,,by Safran
+Captronic Systems,M&A,,,,,,,,India,by Safran
+DSI Datasicherheit,M&A,,,,,,,,Germany,by Airbus
+Firehawk Aerospace,"Investment, Strategic",Propulsion,Raytheon,"Draper VC, Hemisphere Ventures, Star Castle VC, Stellar VC",,Series B,15.5M,15.5M USD,US,should add up to 17.M
+NORSS,M&A,,,,,,,,UK,by Raytheon UK
+X-Bow Launch System,"Investment, Strategic",Propulsion,"Broom Ventures, Lockheed Martin ventures","CrossLink, Razor's Edge ventures",,Series A,27M,27M USD,US,
+Volansi,M&A,,,,,,,,US,distressed acquisition by Sierra Nevada Corporation
+SpaceX,Investment,,,,,,,,US,Another set of very late rounds
+Mangata Networks,"Government, Investment, Strategic",Megaconstellations,Playground Global,"Karista (CosmiCapital), MetaVC, Promus VC, Scottish Enterprise, Temasek",,Series A,33M,33M USD,US,large debt financing towards the end of the year
+E-Space,Investment,Megaconstellations,Prime Movers Labs,,,Seed,50M,,US,
+CommAgility,M&A,,,,,,,,US,acquired by E-Space
+Kymeta,"Investment, Strategic",User Terminals,Bill Gates,Hanwha Systems,,,,,US,
+SatixFy,SPAC,,,,,,,,,
+Cesium Astro,"Investment, Strategic","Components, User Terminals","Airbus Ventures, Forever Venutres (of Philip Sarofim)","Kleiner Perkins, L3 Harris, Lavrock Ventures",,Series B,60M,60M USD,US,
+Anywaves,Investment,User Terminals,Ylliade Groupe,,,,3M,,France,
+Thorium Space technology,Investment,Components,,,,,1.3M,,Poland,
+Utvate,Investment,User Terminals,Fifty Years,"Blue Yard capital, MaC venture Capital, Uncorellated Ventures",,,8M,8M USD,US,
+Hubble Networks,Investment,Satellite IoT,,"SpaceVC, Type One VC, YesVC",,,,,US,very early round so not much disclosed
+OQ Tech,"Investment, Strategic",Satellite IoT,Saudi Aramco Venture Arm,5G fund,September,,13M USD,,Luxembourg,
+Satelliot,"Investment, Strategic",Satellite IoT,"Cellnex, Indra (Venture Arm thereof)",,January,Series A,10M,,Spain,
+Fossa Systems,"Government, Investment",,,,,Series A,1M,,Spain,not confirmed
+Hiber,Failed Acquisition,,,,,,,,,failed acquisition by Astrocast
+OneWeb,M&A,,,,,,,,,acquimerger by Eutelsat
+DRS Leonardo Global Enterprise Solutions,M&A,,,,,,,,,by SES Government Solutions to form SES Space and Defense
+Hispamar,M&A,,,,,,,,,by Hispasat
+Axxess Networks,M&A,,,,,,,,,by Hispasat
+eSat Global,"Investment, Strategic",Satellite IoT,YahSat,,,,,,US,
+Kacific,SPAC Speculation,,,,,,,,,
+Infostellar,Investment,GSaaS,,,,,,,,
+Atlas,Investment,GSaaS,,,,,,,,
+Contec,Investment,GSaaS,,,,,,,,
+Mynaric,"Investment, Strategic",Optical Communications,L3 Harris,,,post-IPO equity,,11.2M Eur,Germany,
+Cailabs,"Government, Investment",Optical Communications,NewSpace Capital,"Definvestment, Safran Corpoate Ventures",,,,26M Eur,France,
+Miratlas,Investment,"Optical Communications, Software",Karista (Cosmi Capital),,,,,,France,
+Salo Sciences,M&A,,,,,,,,,by Planet
+Officina Stellare,"Investment, Strategic","Components, EO Hardware",,,,Strategic round,,rough magnitude of 3.5M USD,Italy,
+Bayanat,IPO,,,,,,,,UAE,
+Satlantis,Investment,EO Hardware,EES,,,Strategic round,,,Spain,
+EOI Data,trade arrangement,EO Upstream,NTT Data,,,,,,US,
+Absolut Group,"Corporate Investment, Investment, Strategic",EO Upstream,Vol-V,,,,,13M,France,
+ConstellR,"Government, Investment",EO Upstream,"LukeStar, VSquared Ventures","FTTF, In-Q-Tel, OHB Ventures, Seraphim",,Seed,10M,,Germany,
+ScanWorld,M&A,EO Upstream,,,,,,,Belgium,"as sort of acquisition by ConstellR, ScanWorld’s mother company joined ConstellR as a shareholder"
+Wyvern,Investment,"EO Upstream, Hyperspectral",Uncork,"Asymmetry Ventures, Emerging Ventures, MaC venture Capital, Moving Capital, Rebel Fund, Unpopular Ventures",,,7M,,Canada,2 different rounds
+GalaxyEye,Investment,EO Upstream,Speciale Invest,"Artha group, Veda vc",December,Seed,3.5M,,India,
+Array labs,Investment,EO Upstream,"Agya ventures, Seraphim","BBQ Capital, Rebel Fund, SpaceVC, Y Commbinator",November,Seed,5M,,US,
+Nara Space,Investment,EO Upstream,,,,Series A,7.8M USD,,South Korea,
+Xplore,Investment,EO Upstream,,"Alumni Ventures, Helios, KittyHawk, Starbridge",,,,,US,"funding up to date 16.2M, mix of gov’t, equity and debt, bit difficult to analyse"
+OroraTech,"Investment, Strategic",EO Upstream,Edaphon,"Ananda Impact Ventures, Apex Ventures, Bayern Kapital",November,Series A,15M,,Germany,
+MuonSpace,Investment,EO Upstream,Radical Ventures,"Congruent, Costanoa, Space Capital, Ubiquity",June,Series A,25M,,US,
+Albedo,Investment,EO Upstream,"Breakthrough Energy Ventures, Shield Capital","Liquid2 Ventures, Republic Capital",,Series A,48M,,US,
+Pixxel,Investment,"EO Upstream, Hyperspectral",Radical Ventures,"In-Q-Tel, Lightspeed, Seraphim",March,Series A,25M,,US,
+SatelliteVu,"Investment, Strategic","EO Upstream, Thermal",,"In-Q-Tel, Lockheed Martin Ventures",,,5M+,5M GBP,UK,5M GBP extension to make a whole of 20M round
+Capella Space,Investment,"EO Upstream, SAR",Night Dragon,"Alumni Ventures, Cota, DCVC",April,Series C,97M,,US,
+Synspective,"Corporate Investment, Investment","EO Upstream, SAR",Nomura (Private Equity Arm),Pavilion Capital (of Temasek),,Series B,100M ,approx 100M USD listed in Yen,Japan,via split equity and debt
+Iceye,"Corporate Investment, Government, Investment, Strategic","EO Upstream, SAR",Seraphim,"BAE Systems, C16 Ventures (of Cobham), Kajima Ventures",,Seried D,136M,,Finland,
+Skyfi,Investment,EO downstream,,"Capital Factory, J2 Ventures, Moving Capital",,,7.15M,,US,
+Ursa Space,Investment,EO downstream,Dorilton Ventures,"Paladin Group, Razor's Edge, Safran Corpoate Ventures",,Series C,16M,,US,
+Kayrros,"Government, Investment",EO downstream,,"BNP Paribas, BPI Finance, EIB, NewSpaceCapital, Tech Souvereignity",,,40M,,France,
+Descartes Labs,M&A,,,,,,,,,distressed acquisition by Antarctica Capital
+SatSure,"Investment, Strategic",EO downstream,,"HDFC, Karista (CosmiCapital), Kotak Mahindra",February,,5M,,India,
+Old City Innovations,M&A,,,,,,,,,by SatSure
+CropTrails,M&A,,,,,,,,,by SatSure
+Picterra,Investment,EO downstream,VI Partners,ACE,,Series A,6.5M,,Switzerland,
+LiveEO,"Government, Investment",EO downstream,MMC Ventures,,,,17M,,Germany,
+AiDash,CLA,EO applications,Schneider Electric (VC Arm),,,CLA,10M,,US,
+Neurafarms.ai,M&A,,,,,,,,,by AiDash
+Overstory,Investment,EO downstream,Convective Capital,,,Seed,5M,,Netherlands,
+Orbica,Investment,EO downstream,Pacific Channel,,,Seed,2.8M,,New Zeeland,
+ChAI,Investment,EO applications,Seraphim,"Insurtech Gateway, Passion Capital, Primo Ventures",October,,,,UK,conditions undisclosed
+Planet Watchers,Investment,"EO downstream, SAR","Creative Ventures, Seraphim",,,Series A,10M,,Israel,
+Qunnect,"Investment, Strategic",Quantum,"Airbus Ventures, Motus Ventures, Quantonation",,,,8M,,US,
+AstroForge,Investment,Asteroid Mining,Initialized Capital,"Liquid2 Ventures, Soma, YCommbinator",,Seed,13M,,US,
+Xona Space Systems,"Investment, Strategic",LEO PNT,First Spark Ventures,"1517, Lockheed Martin Ventures, Seraphim, SpaceVC, Stellar VC, Toyota Ventures",August,,15M,,US,oversubscribed
+Outpost,Investment,Return from Space,,"Draper VC, KittyHawk, Starburst",,,7M,,US,
+Aurora Insight,M&A,,,,,,,,,by Maxar
+Blackshark.ai,M&A,,,,,,,,,by Maxar
+MAxar,"M&A, PE",,,,,,,,,PE takeover by Advent Int’l
+Tommorow.io,Cancelled SPAC,,,,,,,,US,
+Jua,Investment,Weather,Promus VC,SessionVC,October,Seed,2.5M,,Switzerland,
+Airphoton,M&A,,,,,,,,,by Grasp
+Grasp,Investment,Weather,,"Cloudflight, Findus Ventures",,Pre-A round,2M,,France,
+Dawn,Investment,"Propulsion, Spaceplanes",,,,,,,,
+Hermeus,"Government, Investment, Strategic",Spaceplanes,Sam Altman,"Founders Fund, In-Q-Tel, Revolution - Rise of the Rest, Walton Family",March,Series B,100M,,US,
+Radian Aerospace,Investment,Spaceplanes,Fine Structures VC,"Explorer 1 Fund, SpaceFund, Type One VC",January,Seed,27.5M,,US,
+Destinus,"Government, Investment",Spaceplanes,Conny&Co,"ACE, Liquid2 Ventures",,,29M,,Switzerland,
+ Venus Aerospace,Investment,Spaceplanes,Prime Movers Labs,"BoostVC, Cantos",,,20M,,US,
+Quantum Space,Investment,Lunar Economy,Prime Movers Labs,,,Series A,15M,,US,
+Acquarian,"Failure, M&A",,,,,,,,,acquibanktrupcy intp Crean
+Masten Space Technology,Failure,,,,,,,,,acquibanktrupcy into Astrobotic
+Lunar Outpost,Investment,Lunar Economy,Explorer 1 Fund,"Cathexis, Promus VC, Space Capital, Type One VC",May,Seed,12M,,US,
+Intuitive Machines,SPAC,Lunar Economy,,,,,,,,
+Gravitics,Investment,Space Stations,Type One,"Draper VC, Gainangels, Helios, ManhattanWest",,Seed,20M,,US,
+Interstellar Labs,,,,,,,,,,
+Yuri,,,,,,,,,,
+Axiom,,,,,,,,,,
+ValiSpace,,,,,,,,,,
+Vestigo Aerospace,,,,,,,,,,
+SpaceDots,,,,,,,,,,
+LongShot,,,,,,,,,,
+Titan Space,,,,,,,,,,
+ArkEdgeSpace,,,,,,,,,,
+Cognitive3D,,,,,,,,,,
+VioletLabs,,,,,,,,,,
+Irreo,,,,,,,,,,
+Eolian,,,,,,,,,,
+Apogeo Space,,,,,,,,,,
+Zeno Power,,,,,,,,,,
+Adranos,,,,,,,,,,
+Nuview,,,,,,,,,,
+Ubotica,,,,,,,,,,
+Connectica,,,,,,,,,,
+Cosmic Shielding Corp,,,,,,,,,,
+Skyloom,,,,,,,,,,
+Sen,,,,,,,,,,
+Adranos,,,,,,,,,,
