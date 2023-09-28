@@ -3,6 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import geopandas as gpd
 import plotly.express as px
+from folium_mapping_sample import df_geo, create_map, cont_dict, continent_list
+import folium
+import streamlit as st
+import branca
+import pandas as pd
+import geopandas as gpd
+from streamlit_folium import st_folium
+import plotly.express as px
+from folium.features import GeoJsonPopup, GeoJsonTooltip
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -11,12 +20,12 @@ df = pd.read_csv('data/preprocessed_funding.csv')
 ddf = df
 ddf['Month'] = pd.to_datetime(ddf['Month'])
 
-df_geo = gpd.read_file("data/edited_geo_df.shp")
-
+#df_geo = gpd.read_file("data/edited_geo_df.shp")
+#print(df_geo)
 
 filtered_geo = df_geo.dropna(subset = ['amount_usd'])
 company_list = list(set(df['Company']))
-continent_list = list(set(filtered_geo['continent']))
+#continent_list = list(set(filtered_geo['continent']))
 
 
 
@@ -45,7 +54,7 @@ with tab1:
 
 
     elif selected_metric_m == 'Amount in Millions':
-        print(selected_metric_m)
+        #print(selected_metric_m)
         time_investor = ddf.dropna().groupby('Month').sum()['amount_usd']
         print(time_investor)
         by_type = df[['Major Category','amount_usd']].groupby('Major Category').sum().sort_values('amount_usd',ascending=False)['amount_usd']
@@ -132,47 +141,18 @@ with tab3:
     st.header('Geography Dashboard')
     selected_metric_m = st.selectbox(label = 'Select Geographic Metric',options = ['Count','Amount in Millions'])
     selected_metrics = metric_dict[selected_metric_m]
+    selected_continent =  st.selectbox('Select Geographic Body to Analyze', options = continent_list)
+    st.subheader('Map')
+    outputs = create_map(df_geo, selected_continent, cont_dict,selected_metrics ,selected_metric_m)
+    m = outputs[0]
 
-    st.subheader('Global Analysis')
-    fig, world_ax = plt.subplots(1, 1)
-    df_geo.plot(column = selected_metrics, ax = world_ax, legend=True ,legend_kwds={'label': f"{selected_metric_m} of Investments by Country",'orientation': "horizontal"})
-    df_geo.boundary.plot(ax=world_ax)
-    fig.set_size_inches(18.5, 10.5)
-    st.pyplot()
+    st_data = st_folium(m, height = 400, width=700)
+    df_bar = outputs[1][['name',selected_metrics]].dropna().sort_values(selected_metrics,ascending = False)
 
-    ddagt = df_geo[['name',selected_metrics]].dropna().sort_values(selected_metrics, ascending = False)
-    #.plot(kind = 'bar', x = 'name', title = 'Investment by Country',figsize = (20,10), ylabel = f'{selected_metric_m}')
-    #st.pyplot()
-    fig = px.bar(ddagt, x = 'name', y = selected_metrics,height=400, width = 700)
+    st.subheader('Numerical Comparison')
+    fig = px.bar(df_bar, x = 'name', y = selected_metrics,height=400, width = 700)
     fig.update_layout(title='Amount per Country', yaxis_title= selected_metric_m, xaxis_title='country')
     st.plotly_chart(fig)
-
-
-    st.subheader('Continental Analysis')
-    selected_continent =  st.selectbox('Select Continent to Analyze', options = continent_list)
-    col1,col2 = st.columns(2)
-    fcdf = df_geo[df_geo['continent'] == selected_continent]
-    with col1:
-        fig2, cont_ax = plt.subplots(1, 1)
-        if selected_continent == 'Europe':
-            cont_ax.set_xlim(-20, 50)
-            cont_ax.set_ylim(30, 70)
-
-        if selected_continent == 'Oceania':
-            cont_ax.set_xlim(100, 200)
-            cont_ax.set_ylim(-50, -0)
-
-        fcdf.plot(column = selected_metrics, ax = cont_ax, legend=True ,legend_kwds={'label': f"{selected_metric_m} of Investments by Country",'orientation': "horizontal"})
-        fcdf.boundary.plot(ax=cont_ax)
-        st.pyplot()
-
-    with col2:
-        ffdgtg = fcdf[['name',selected_metrics]].dropna().sort_values(selected_metrics, ascending = False)
-        #.plot(kind = 'bar', x = 'name', title = 'Investment by Country within Continent', ylabel = f'{selected_metric_m}')
-        #st.pyplot()
-        fig = px.bar(ffdgtg, x = 'name', y = selected_metrics,height=300, width = 400)
-        fig.update_layout(title='Amount per Country', yaxis_title= selected_metric_m, xaxis_title='country')
-        st.plotly_chart(fig)
 
 
 
