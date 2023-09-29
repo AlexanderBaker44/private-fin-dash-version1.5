@@ -3,16 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import geopandas as gpd
 import plotly.express as px
-from folium_mapping_sample import df_geo, create_map, cont_dict, continent_list
+#from folium_mapping_sample import df_geo, create_map, cont_dict, continent_list
 import folium
-import streamlit as st
 import branca
-import pandas as pd
-import geopandas as gpd
 from streamlit_folium import st_folium
-import plotly.express as px
 from folium.features import GeoJsonPopup, GeoJsonTooltip
 
+#renderng glitch has to do with tabs
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 df = pd.read_csv('data/preprocessed_funding.csv')
@@ -22,20 +19,36 @@ ddf['Month'] = pd.to_datetime(ddf['Month'])
 
 #df_geo = gpd.read_file("data/edited_geo_df.shp")
 #print(df_geo)
-
+df_geo = gpd.read_file("data/edited_geo_df.shp")
 filtered_geo = df_geo.dropna(subset = ['amount_usd'])
 company_list = list(set(df['Company']))
 #continent_list = list(set(filtered_geo['continent']))
 
 
+metric_dict = {'Count':'count', 'Amount in Millions':'amount_usd'}
+cont_dict = {
+'World': [[-50.003431,-175.781123],[78.091047,188.676738]],
+'North America': [[-2.600651,-130.909825],[69.778954,-63.856951]],
+#'South America': [[-58.704332,-89.218864],[9.726405,-28.006829]],
+'Africa': [[-37.020096,-15.406895],[36.738886,40.176447]],
+'Europe': [[33.049188,-21.598470],[70.104502,49.111984]],
+'Asia': [[7.536767,32.480595],[54.876608,150.260988]],
+'Oceania': [[-41.692597,96.366250],[6.070650,187.128922]]
+}
+
+
+continent_list = list(cont_dict.keys())
+
 
 metric_dict = {'Count':'count', 'Amount in Millions':'amount_usd'}
 
+with st.sidebar:
+    page  = st.radio('Choose Page', ('General', 'Company Overview', 'Geographic'))
 #tabs general, geographic, single companies
-tab1,tab2,tab3 = st.tabs(['General','Company Overview','Geographic'])
+#tab1,tab2,tab3 = st.tabs(['General','Company Overview','Geographic'])
 
 #general metrics count and total
-with tab1:
+if page == 'General':
     st.header('General Financial Analysis')
     selected_metric_m = st.selectbox(label = 'Select Metric',options = ['Count','Amount in Millions'])
     selected_metric = metric_dict[selected_metric_m]
@@ -115,7 +128,7 @@ with tab1:
 
 #selected_metric = st.dropdown()
 
-with tab2:
+if page == 'Company Overview':
     st.header('Company Overview')
     selected_companies = st.multiselect('Select Companies to Analyze', company_list,[company_list[0]])
     filtered_df = df[df['Company'].isin(selected_companies)]
@@ -137,22 +150,79 @@ with tab2:
     else:
         st.write('Please Select a Company')
 
-with tab3:
+if page  == 'Geographic':
+
+
     st.header('Geography Dashboard')
-    selected_metric_m = st.selectbox(label = 'Select Geographic Metric',options = ['Count','Amount in Millions'])
-    selected_metrics = metric_dict[selected_metric_m]
+    metric_name = st.selectbox(label = 'Select Geographic Metric',options = ['Count','Amount in Millions'], index = 1)
+    metric = metric_dict[metric_name]
     selected_continent =  st.selectbox('Select Geographic Body to Analyze', options = continent_list)
+    m = folium.Map()
     st.subheader('Map')
-    outputs = create_map(df_geo, selected_continent, cont_dict,selected_metrics ,selected_metric_m)
-    m = outputs[0]
+    #print(selected_continent)
+    m.fit_bounds(cont_dict[selected_continent])
+
+    if selected_continent == 'World':
+        fcdf = df_geo
+    else:
+        fcdf = df_geo[df_geo['continent'] == selected_continent]
+
+    colormap = branca.colormap.LinearColormap(
+        vmin=fcdf[metric].quantile(0.0),
+        vmax=fcdf[metric].quantile(1),
+        colors=["red", "blue"],
+        caption=metric_name,
+    )
+    popup = GeoJsonPopup(
+        fields=["name", metric],
+        aliases=["Country: ", metric_name],
+        localize=True,
+        labels=True,
+        style="background-color: yellow;",
+    )
+
+    tooltip = GeoJsonTooltip(
+        fields=["name",metric],
+        aliases=["Country:", metric_name],
+        localize=True,
+        sticky=False,
+        labels=True,
+        style="""
+            background-color: #F0EFEF;
+            border: 2px solid black;
+            border-radius: 3px;
+            box-shadow: 3px;
+        """,
+        max_width=800,
+    )
+
+
+    folium.GeoJson(
+        fcdf,
+        style_function=lambda x: {
+            "fillColor": colormap(x["properties"][metric])
+            if x["properties"][metric] is not None
+            else "transparent",
+            "color": "black",
+            "fillOpacity": 0.4,
+        },
+        tooltip=tooltip,
+        popup=popup,
+    ).add_to(m)
+
+    colormap.add_to(m)
+
+
+    m.fit_bounds(cont_dict[selected_continent])
+
+
 
     st_data = st_folium(m, height = 400, width=700)
-    st_data
-    df_bar = outputs[1][['name',selected_metrics]].dropna().sort_values(selected_metrics,ascending = False)
+    df_bar = fcdf[['name',metric]].dropna().sort_values(metric ,ascending = False)
 
     st.subheader('Numerical Comparison')
-    fig = px.bar(df_bar, x = 'name', y = selected_metrics,height=400, width = 700)
-    fig.update_layout(title='Amount per Country', yaxis_title= selected_metric_m, xaxis_title='country')
+    fig = px.bar(df_bar, x = 'name', y = metric,height=400, width = 700)
+    fig.update_layout(title='Amount per Country', yaxis_title= metric_name, xaxis_title='country')
     st.plotly_chart(fig)
 
 
