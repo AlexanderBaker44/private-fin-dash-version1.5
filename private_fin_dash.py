@@ -146,7 +146,8 @@ with tab3:
     outputs = create_map(df_geo, selected_continent, cont_dict,selected_metrics ,selected_metric_m)
     m = outputs[0]
 
-    st_folium(m, height = 400, width=700)
+    st_data = st_folium(m, height = 400, width=700)
+    st_data
     df_bar = outputs[1][['name',selected_metrics]].dropna().sort_values(selected_metrics,ascending = False)
 
     st.subheader('Numerical Comparison')
