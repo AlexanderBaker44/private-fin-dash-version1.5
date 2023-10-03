@@ -40,7 +40,7 @@ cont_dict = {
 continent_list = list(cont_dict.keys())
 
 
-metric_dict = {'Count':'count', 'Amount in Millions':'amount_usd'}
+metric_dict = {'Number of Investments':'count', 'Amount in Millions USD':'amount_usd'}
 
 with st.sidebar:
     page  = st.radio('Choose Page', ('General', 'Company Overview', 'Geographic'))
@@ -50,11 +50,11 @@ with st.sidebar:
 #general metrics count and total
 if page == 'General':
     st.header('General Financial Analysis')
-    selected_metric_m = st.selectbox(label = 'Select Metric',options = ['Count','Amount in Millions'])
+    selected_metric_m = st.selectbox(label = 'Select Metric',options = ['Number of Investments','Amount in Millions USD'])
     selected_metric = metric_dict[selected_metric_m]
 
 
-    if selected_metric_m == 'Count':
+    if selected_metric_m == 'Number of Investments':
         time_investor = ddf.dropna().groupby('Month').count()['Unnamed: 0']
 
         by_type = df.groupby('Major Category').count().sort_values('Unnamed: 0',ascending=False)['Unnamed: 0']
@@ -66,7 +66,7 @@ if page == 'General':
         selected_metric_s = 'Unnamed: 0'
 
 
-    elif selected_metric_m == 'Amount in Millions':
+    elif selected_metric_m == 'Amount in Millions USD':
         #print(selected_metric_m)
         time_investor = ddf.dropna().groupby('Month').sum()['amount_usd']
         print(time_investor)
@@ -137,14 +137,17 @@ if page == 'Company Overview':
         lgdf = filtered_df.groupby('Company').agg({'Lead Investor': lambda x: list(x)[0],'Other Investor': lambda x: list(set(x))[0]})
         st.table(lgdf)
 
-        st.subheader('Investment Amount in Millions')
+        st.subheader('Investment Amount in Millions USD')
         fgdf = filtered_df[['Company','amount_usd','Country']].groupby(['Company']).sum()
-        if sum(fgdf['amount_usd']) > 0:
+        if len(fgdf['amount_usd']) > 1:
             #fgdf['amount_usd'].plot(kind = 'bar', ylabel = 'Amount in Millions')
             #st.pyplot()
             fig = px.bar(fgdf, x = fgdf.index, y = 'amount_usd',height=400, width = 800)
-            fig.update_layout(title='Amount per Companny', yaxis_title='Amount USD', xaxis_title='category')
+            fig.update_layout(title='Amount of Investments per Company', yaxis_title='Amount in Millions USD', xaxis_title='category')
             st.plotly_chart(fig)
+        elif len(fgdf['amount_usd']) == 1:
+            comp_val = list(fgdf['amount_usd'])[0]
+            st.markdown(f'#### The company {list(fgdf.index)[0]} has {comp_val} million USD.')
         else:
             st.write('There is no investment amount found for the selected company')
     else:
@@ -154,7 +157,7 @@ if page  == 'Geographic':
 
 
     st.header('Geography Dashboard')
-    metric_name = st.selectbox(label = 'Select Geographic Metric',options = ['Count','Amount in Millions'], index = 1)
+    metric_name = st.selectbox(label = 'Select Geographic Metric',options = ['Number of Investments','Amount in Millions USD'], index = 1)
     metric = metric_dict[metric_name]
     selected_continent =  st.selectbox('Select Geographic Body to Analyze', options = continent_list)
     m = folium.Map()
@@ -175,17 +178,17 @@ if page  == 'Geographic':
     )
     popup = GeoJsonPopup(
         fields=["name", metric],
-        aliases=["Country: ", metric_name],
+        aliases=["Country: ", f'{metric_name}: '],
         localize=True,
         labels=True,
         style="background-color: yellow;",
     )
 
     tooltip = GeoJsonTooltip(
-        fields=["name",metric],
-        aliases=["Country:", metric_name],
+        fields=["name", metric],
+        aliases=["Country: ", f'{metric_name}: '],
         localize=True,
-        sticky=False,
+        sticky=True,
         labels=True,
         style="""
             background-color: #F0EFEF;
@@ -221,9 +224,16 @@ if page  == 'Geographic':
     df_bar = fcdf[['name',metric]].dropna().sort_values(metric ,ascending = False)
 
     st.subheader('Numerical Comparison')
-    fig = px.bar(df_bar, x = 'name', y = metric,height=400, width = 700)
-    fig.update_layout(title='Amount per Country', yaxis_title= metric_name, xaxis_title='country')
-    st.plotly_chart(fig)
+    if len(df_bar['name']) > 1:
+        fig = px.bar(df_bar, x = 'name', y = metric,height=400, width = 700)
+        fig.update_layout(title='Amount per Country', yaxis_title= metric_name, xaxis_title='country')
+        st.plotly_chart(fig)
+    elif len(df_bar['name']) == 1:
+        cont_val = list(df_bar[metric])[0]
+        name_cont = list(df_bar['name'])[0]
+        st.markdown(f'#### The company {name_cont} has {cont_val} million USD.')
+    else:
+        st.write('Continent has no relevant investments.')
 
 
 

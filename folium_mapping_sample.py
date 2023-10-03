@@ -29,12 +29,13 @@ cont_dict = {
 
 continent_list = list(cont_dict.keys())
 
-#selected_metric_m = st.selectbox(label = 'Select Geographic Metric',options = ['Count','Amount in Millions'])
-#selected_continent =  st.selectbox('Select Continent to Analyze', options = continent_list)
+selected_metric_m = st.selectbox(label = 'Select Geographic Metric',options = ['Count','Amount in Millions'])
+selected_continent =  st.selectbox('Select Continent to Analyze', options = continent_list)
 
-#selected_metrics = metric_dict[selected_metric_m]
+selected_metrics = metric_dict[selected_metric_m]
 
 def create_map(df,selected_continent, cont_dict, metric, metric_name):
+
     m = folium.Map()
     if selected_continent == 'World':
         fcdf = df
@@ -91,14 +92,14 @@ def create_map(df,selected_continent, cont_dict, metric, metric_name):
     return m, fcdf
 
 # call to render Folium map in Streamlit
-#outputs = create_map(df, continent_list, cont_dict,selected_metrics ,selected_metric_m)
-#m= outputs[0]
+outputs = create_map(df_geo, selected_continent, cont_dict,selected_metrics ,selected_metric_m)
+m= outputs[0]
 
-#st_folium(m, height = 400, width=700)
-#df_bar = outputs[1][['name',selected_metrics]].dropna().sort_values(selected_metrics,ascending = False)
-#fig = px.bar(df_bar, x = 'name', y = selected_metrics,height=400, width = 700)
-#fig.update_layout(title='Amount per Country', yaxis_title= selected_metric_m, xaxis_title='country')
-#st.plotly_chart(fig)
+st_folium(m, height = 400, width=700)
+df_bar = outputs[1][['name',selected_metrics]].dropna().sort_values(selected_metrics,ascending = False)
+fig = px.bar(df_bar, x = 'name', y = selected_metrics,height=400, width = 700)
+fig.update_layout(title='Amount per Country', yaxis_title= selected_metric_m, xaxis_title='country')
+st.plotly_chart(fig)
 
 
 
